@@ -5,320 +5,180 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LANY's Bakes</title>
+    <meta name="description" content="LANY's Bakes — handmade scones, muffins and cakes baked fresh and sold by the litre, for bulk orders and everyday cravings.">
+    <title>LANY's Bakes — Handmade, Baked Fresh, Ordered by the Litre</title>
 
-    <!-- swiper link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
-    <!-- cdn icon link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <!-- custom css file  -->
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <!-- header section start here  -->
-    <header class="header">
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <header class="header" id="siteHeader">
         <div class="logoContent">
-            <a href="#" class="logo"><img src="images/logo.png" alt=""></a>
-            <h1 class="logoName">LANY's Bakes </h1>
+            <a href="#home" class="logo"><img src="images/logo.png" alt="LANY's Bakes logo"></a>
+            <h1 class="logoName">LANY's Bakes</h1>
         </div>
 
-        <nav class="navbar">
-            <a href="#home">home</a>
-            <a href="#product">product</a>
-            <a href="#contact">contact</a>
+        <nav class="navbar" id="navbar">
+            <a href="#home" class="nav-link active" data-section="home">home</a>
+            <a href="#product" class="nav-link" data-section="product">menu</a>
+            <a href="#blogs" class="nav-link" data-section="blogs">stories</a>
+            <a href="#contact" class="nav-link" data-section="contact">contact</a>
         </nav>
 
         <div class="icon">
-            <i class="fas fa-search" id="search"></i>
-            <i class="fas fa-bars" id="menu-bar"></i>
+            <i class="fas fa-search" id="search-toggle" role="button" aria-label="Toggle search" tabindex="0"></i>
+            <button class="cart-icon" id="cart-toggle" aria-label="Open cart">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <i class="fas fa-bars" id="menu-bar" role="button" aria-label="Toggle menu" tabindex="0"></i>
         </div>
 
-        <div class="search">
-            <input type="search" placeholder="search...">
+        <div class="search" id="searchBox">
+            <input type="search" id="searchInput" placeholder="find a bake... try 'chocolate'" autocomplete="off">
+            <div class="search-results" id="searchResults"></div>
         </div>
     </header>
-    <!-- header section end here  -->
 
-    <!-- home section start here  -->
+    <div class="nav-backdrop" id="navBackdrop"></div>
+
     <section class="home" id="home">
         <div class="homeContent">
-            <h2>LANY's Delicous Bakery products </h2>
-            <p>Bulk Orders available for all products and delivery discounted</p>
+            <span class="eyebrow">est. in a home kitchen, baked for yours</span>
+            <h2>Bakes worth <em>ordering</em> by the litre.</h2>
+            <p>Scones, muffins and cakes mixed fresh, baked daily, and priced for bulk — weddings, office Fridays, or just because. Delivery discounted on every batch.</p>
             <div class="home-btn">
-                <a href="#"><button>Order Now</button></a>
+                <a href="#product"><button>See the menu</button></a>
+                <a href="#contact" class="ghost-link">Order in bulk &rarr;</a>
+            </div>
+            <div class="home-stats">
+                <div><strong>500+</strong><span>litres baked monthly</span></div>
+                <div><strong>9</strong><span>signature recipes</span></div>
+                <div><strong>24hr</strong><span>order turnaround</span></div>
             </div>
         </div>
     </section>
 
-    <!-- home section end here  -->
+    <div class="torn-edge" aria-hidden="true"></div>
 
-    <!-- product section start here  -->
     <section class="product" id="product">
         <div class="heading">
-            <h2>Our Products</h2>
+            <span class="eyebrow">the menu</span>
+            <h2>Two trays, one obsession</h2>
+            <p class="heading-sub">Everything below is sold by volume for bulk orders, or ask about single portions when you order.</p>
         </div>
-        <div class="swiper product-row">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <div class="img">
-                        <img src="images/pic1.jpg" alt="">
-                    </div>
-                    <div class="product-content">
-                        <h3>Vanilla scones</h3>
-                        <h5>Price List</h5>
-                        <p>5 litre : R350</p>
-                        <p>10 litre : R550</p>
-                        <p>20 litre : R700</p>
-                        <div class="orderNow">
-                            <button>Order Now </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <div class="img">
-                        <img src="images/pic1 (4).jpg" alt="">
-                    </div>
-                    <div class="product-content">
-                        <h3>Chocolate Scones</h3>
-                        <h5>Price List</h5>
-                        <p>5 litre : R350</p>
-                        <p>10 litre : R550</p>
-                        <p>20 litre : R700</p>
-                        <div class="orderNow">
-                            <button>Order Now </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <div class="img">
-                        <img src="images/pic1 (3).jpg" alt="">
-                    </div>
-                    <div class="product-content">
-                        <h3>Vanilla muffins</h3>
-                        <h5>Price List</h5>
-                        <p>5 litre : R350</p>
-                        <p>10 litre : R550</p>
-                        <p>20 litre : R700</p>
-                        <div class="orderNow">
-                            <button>Order Now </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <div class="img">
-                        <img src="images/pic1 (2).png" alt="">
-                    </div>
-                    <div class="product-content">
-                        <h3>Chocolate Muffins</h3>
-                        <h5>Price List</h5>
-                        <p>5 litre : R350</p>
-                        <p>10 litre : R550</p>
-                        <p>20 litre : R700</p>
-                        <div class="orderNow">
-                            <button>Order Now </button>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
+        <div class="filter-bar" id="filterBar">
+            <button class="filter-chip active" data-filter="all">All bakes</button>
+            <button class="filter-chip" data-filter="scones">Scones</button>
+            <button class="filter-chip" data-filter="muffins">Muffins</button>
+            <button class="filter-chip" data-filter="cakes">Cakes</button>
+        </div>
+
+        <div class="swiper product-row" data-category-group="1">
+            <div class="swiper-wrapper" id="productWrapperOne"></div>
             <div class="swiper-pagination"></div>
         </div>
-        <div class="swiper product-row">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide box">
-                    <div class="img">
-                        <img src="images/pic1 (3).png" alt="">
-                    </div>
-                    <div class="product-content">
-                        <h3>Chocolate Cake</h3>
-                        <h5>Price List</h5>
-                        <p>small : R200</p>
-                        <p>medium : R400</p>
-                        <p>large : R600</p>
-                        <div class="orderNow">
-                            <button>Order Now </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <div class="img">
-                        <img src="images/pic1 (1).png" alt="">
-                    </div>
-                    <div class="product-content">
-                        <h3>Carrot cake</h3>
-                        <h5>Price List</h5>
-                        <p>small : R200</p>
-                        <p>medium : R400</p>
-                        <p>large : R600</p>
-                        <div class="orderNow">
-                            <button>Order Now </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <div class="img">
-                        <img src="images/pic1 (2).png" alt="">
-                    </div>
-                    <div class="product-content">
-                        <h3>Strawberry Muffins</h3>
-                        <h5>Price List</h5>
-                        <p>5 litre : R350</p>
-                        <p>10 litre : R550</p>
-                        <p>20 litre : R700</p>
-                        <div class="orderNow">
-                            <button>Order Now </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide box">
-                    <div class="img">
-                        <img src="images/pic2.png" alt="">
-                    </div>
-                    <div class="product-content">
-                        <h3>Cranberry Muffins</h3>
-                        <h5>Price List</h5>
-                        <p>5 litre : R350</p>
-                        <p>10 litre : R550</p>
-                        <p>20 litre : R700</p>
-                        <div class="orderNow">
-                            <button>Order Now </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="swiper product-row second-row" data-category-group="2">
+            <div class="swiper-wrapper" id="productWrapperTwo"></div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
 
-    <!-- product section end here  -->
+    <div class="torn-edge flip" aria-hidden="true"></div>
 
-    <!-- blogs section start here  -->
     <section class="blogs" id="blogs">
-
-        <div class=" swiper blogs-row">
-            <div class="swiper-wrapper">
-                <div class=" swiper-slide box">
-                    <div class="img">
-                        <img src="images/blog-img1.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Caramel Bourbon Vanilla Cupcakes </h3>
-                        <p>Lorem,</p>
-                        <p>Lorem</p>
-                        <a href="#blogs" class="btn">learn more</a>
-                    </div>
-                </div>
-                <div class=" swiper-slide box">
-                    <div class="img">
-                        <img src="images/blog-img2.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Caramel Bourbon Vanilla Cupcakes </h3>
-                        <p>Lorem</p>
-                        <p>Lorem</p>
-                        <a href="#blogs" class="btn">learn more</a>
-                    </div>
-                </div>
-                <div class=" swiper-slide box">
-                    <div class="img">
-                        <img src="images/blog-img2.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Caramel Bourbon Vanilla Cupcakes </h3>
-                        <p>Lorem,</p>
-                        <p>Lorem</p>
-                        <a href="#blogs" class="btn">learn more</a>
-                    </div>
-                </div>
-            </div>
+        <div class="heading">
+            <span class="eyebrow light">from the kitchen</span>
+            <h2 class="light">Stories &amp; recipes</h2>
+        </div>
+        <div class="swiper blogs-row">
+            <div class="swiper-wrapper" id="blogWrapper"></div>
             <div class="swiper-button-next"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-pagination"></div>
-
-
         </div>
     </section>
 
-    <!-- blogs section ends here  -->
-
-    <!-- newsletter section start here  -->
-
     <section class="newsletter">
-        <form action="">
-            <h3>subscribe for latest update</h3>
-            <input type="email" name="" placeholder="enter your email" id="" class="box">
-            <input type="button" value="email us" class="box2">
+        <form id="newsletterForm" novalidate>
+            <h3>Get first dibs on seasonal bakes</h3>
+            <p class="newsletter-sub">One email a month. No spam, just whatever's coming out of the oven.</p>
+            <div class="newsletter-row">
+                <input type="email" id="newsletterEmail" placeholder="enter your email" class="box" required>
+                <input type="submit" value="notify me" class="box2">
+            </div>
+            <p class="form-message" id="newsletterMessage" role="status" aria-live="polite"></p>
         </form>
     </section>
-    <!-- newsletter section ends here  -->
-
-    
-
-    <!-- footer section start here  -->
 
     <footer class="footer" id="contact">
         <div class="box-container">
             <div class="mainBox">
                 <div class="content">
-                    <a href="#"><img src="images/logo.png" alt=""></a>
+                    <a href="#home"><img src="images/logo.png" alt="LANY's Bakes logo"></a>
                     <h1 class="logoName">LANY'S Bakes</h1>
                 </div>
-
-
+                <p>Handmade bakes, baked fresh and priced fair — for the people who order trays, not slices.</p>
             </div>
             <div class="box">
                 <h3>Quick link</h3>
-                <a href="#"> <i class="fas fa-arrow-right"></i>Home</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i>product</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i>contact</a>
-
+                <a href="#home"><i class="fas fa-arrow-right"></i>Home</a>
+                <a href="#product"><i class="fas fa-arrow-right"></i>Menu</a>
+                <a href="#contact"><i class="fas fa-arrow-right"></i>Contact</a>
             </div>
             <div class="box">
                 <h3>Extra link</h3>
-                <a href="#"> <i class="fas fa-arrow-right"></i>Account info</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i>order item</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i>privacy policy</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i>payment method</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Account info</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Order item</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Privacy policy</a>
+                <a href="#"><i class="fas fa-arrow-right"></i>Payment method</a>
             </div>
             <div class="box">
                 <h3>Contact Info</h3>
-                <a href="#"> <i class="fas fa-phone"></i>+27 67 247 6216</a>
-                <a href="#"> <i class="fas fa-envelope"></i>Awelani.mutamba@gmail.com</a>
-
+                <a href="tel:+27672476216"><i class="fas fa-phone"></i>+27 67 247 6216</a>
+                <a href="mailto:Awelani.mutamba@gmail.com"><i class="fas fa-envelope"></i>Awelani.mutamba@gmail.com</a>
             </div>
-
         </div>
         <div class="share">
-            <a href="#" class="fab fa-facebook-f"></a>
-            <a href="#" class="fab fa-twitter"></a>
-            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-facebook-f" aria-label="Facebook"></a>
+            <a href="#" class="fab fa-twitter" aria-label="Twitter"></a>
+            <a href="#" class="fab fa-instagram" aria-label="Instagram"></a>
         </div>
         <div class="credit">
-             Copyright | 2026 TechDesk LTD/PTY. All rights reserved
+            Copyright | 2026 TechDesk LTD/PTY. All rights reserved
         </div>
     </footer>
 
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+        <div class="cart-header">
+            <h3>Your order</h3>
+            <button id="cartClose" aria-label="Close cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">R0</strong>
+            </div>
+            <button class="cart-checkout" id="cartCheckout">Order via WhatsApp</button>
+        </div>
+    </aside>
+    <div class="cart-backdrop" id="cartBackdrop"></div>
 
+    <div class="toast-stack" id="toastStack" aria-live="polite"></div>
 
-
-
-
-
-
-
-
-    <!-- swiper js link  -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <!-- custom js file  -->
     <script src="index.js"></script>
-
-
 </body>
 
 </html>
